@@ -9,17 +9,17 @@ module RedmineCAS
   end
 
   def enabled?
-    setting(:enabled)
+    setting('enabled')
   end
 
   def autocreate_users?
-    setting(:autocreate_users)
+    setting('autocreate_users')
   end
 
   def setup!
     return unless enabled?
     CASClient::Frameworks::Rails::Filter.configure(
-      :cas_base_url => setting(:cas_url),
+      :cas_base_url => setting('cas_url'),
       :logger => Rails.logger,
       :enable_single_sign_out => single_sign_out_enabled?
     )
@@ -31,7 +31,7 @@ module RedmineCAS
 
   def user_extra_attributes_from_session(session)
     attrs = {}
-    map = Rack::Utils.parse_nested_query setting(:attributes_mapping)
+    map = Rack::Utils.parse_nested_query setting('attributes_mapping')
     extra_attributes = session[:cas_extra_attributes] || {}
     map.each_pair do |key_redmine, key_cas|
       value = extra_attributes[key_cas]

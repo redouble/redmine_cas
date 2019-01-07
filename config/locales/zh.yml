@@ -1,0 +1,10 @@
+zh:
+  redmine_cas_settings_enabled_label: '生效'
+  redmine_cas_settings_cas_url_label: 'CAS服务器URL地址'
+  redmine_cas_settings_cas_url_helptext: '指向你的CAS服务器的基本地址'
+  redmine_cas_settings_attributes_mapping_label: '属性映射'
+  redmine_cas_settings_attributes_mapping_helptext: 'This is how the plugin maps extended attributes from the CAS server to the Redmine model.<br /><code>attribute_name_in_redmine=attribute_name_in_cas_response</code><br />分隔符: <code>&amp;</code> (query-string).<br />例子: <code>firstname=first_name&amp;lastname=last_name&amp;mail=email</code><br />可用的属性名称如下: <code>%{attribute_names}</code>'
+  redmine_cas_settings_autocreate_users_label: '自动创建用户'
+  redmine_cas_settings_autocreate_users_helptext: '如果认证通过的话，则在项目管理系统中自动创建一个用户。<br/>只有在属性映射设置中指定了firstname、lastname和mail等属性的情况下才生效。'
+  redmine_cas_user_not_found: '"%{user}"已经认证通过，但是需要在项目管理系统中先创建该用户。'
+  redmine_cas_user_not_created: '"%{user}"已经认证通过，但是无法在项目管理系统中自动创建该用户，所以需要手工创建。'
