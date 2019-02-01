@@ -7,16 +7,16 @@ require_dependency 'redmine_cas_hook_listener'
 
 Redmine::Plugin.register :redmine_cas do
   name 'Redmine CAS'
-  author 'Nils Caspar (Nine Internet Solutions AG)'
-  description 'Plugin to CASify your Redmine installation.'
-  version '1.2.1'
-  url 'https://github.com/ninech/redmine_cas'
-  author_url 'http://www.nine.ch/'
+  author 'Redouble117@Navigator fork from Nils Caspar (Nine Internet Solutions AG)'
+  description '基于石刻Redmine平台，为平台增加单点登录功能，可以登录到CAS服务器。'
+  version '2.02.01'
+  url 'https://github.com/redouble/redmine_cas'
+  author_url 'http://shike.in/'
 
   settings :default => {
     'enabled' => false,
-    'cas_url' => 'https://',
-    'attributes_mapping' => 'firstname=first_name&lastname=last_name&mail=email',
+    'cas_url' => 'https://localhost:8888',
+    'attributes_mapping' => 'login=user&id=id&firstname=name',
     'autocreate_users' => false
   }, :partial => 'redmine_cas/settings'
 
